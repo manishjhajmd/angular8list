@@ -1,0 +1,44 @@
+<p>product works!</p>
+<app-productlist [lists]="lists"></app-productlist>
+<h4>{{zyu.CustomerTitle}}</h4>
+<h5>Total Customer : - {{zyu.customertotal()}}</h5>
+<p *ngFor="let customer of zyu.customers">{{customer.name}}</p>
+
+<app-customer #zyu></app-customer>
+<h1>*ngFor with index add</h1>
+<p *ngFor="let cus of lists; let i=index">
+  <span id="list{{i+1}}">{{i+1}} - </span> {{cus.Name}}
+</p>
+
+<!-- <p *ngIf="show; else elseBlock"></p>
+<ng-template #elseBlock>SingleElseBlock</ng-template> -->
+
+<p *ngIf="showthen; then thenBlock else elseBlock"></p>
+
+<ng-template #thenBlock>ThenBlock</ng-template>
+<ng-template #elseBlock>ElseBlock</ng-template>
+
+<h1>Grouping with *ngFor</h1>
+<ul *ngFor="let group of Countrydetails">
+  <li>{{group.Country}}</li>
+  <ol>
+    <li *ngFor="let person of group.People">
+      {{person.Name}}
+
+    </li>
+  </ol>
+
+
+</ul>
+
+<ul *ngFor="let per of Country">
+  <li [ngStyle]="{'color' : getcolor(per.Country)}">
+    {{per.name}} - {{per.Country}}
+
+  </li>
+</ul>
+<div *ngFor="let student of students" class="row">
+  <div class="col-sm-12">
+    {{student.class }} : {{student.Name}}
+  </div>
+</div>

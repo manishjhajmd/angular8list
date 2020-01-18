@@ -1,0 +1,21 @@
+<h1>Property Binding</h1>
+<img [src] ="imageurl" style="width: 150px">
+<h2>Property Binding disable</h2>
+<button [disabled] = isDisable>Sign in</button>
+<h1>Event Binding </h1>
+
+<button (click)="Plus()"  [disabled] ="isDisable" value="Count"> Plus </button>
+ {{count}}
+<button (click)="Minus()"  [disabled] ="minus" value="Count"> Minus </button>
+
+<button (click)="reset()"  [disabled] ="!isDisable" value="Count"> Reset </button>
+
+<h1>Two Way Data Binding</h1>
+<input type="text" [(ngModel)]="hello" placeholder="Enter Text">
+{{hello}}
+<h2> *ngIf </h2>
+<input type="radio" name="a" checked (click)="checked(true)"> True
+<input type="radio" name="a" (click)="checked(false)">Fasle
+
+<div *ngIf="status" >Valid data</div>
+<div *ngIf="!status" >Invalid data</div>
